@@ -24,6 +24,8 @@ defaults write com.apple.dock orientation -string "left"
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock autohide-delay -float "0"
 defaults write com.apple.dock show-recents -bool false
+# Wipe all (default) app icons from the Dock
+#defaults write com.apple.dock persistent-apps -array
 killall Dock
 
 # Disable press-and-hold for keys in favor of key repeat
