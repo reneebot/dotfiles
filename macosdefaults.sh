@@ -120,6 +120,12 @@ defaults write -g NSCloseAlwaysConfirmsChanges -bool true
 # Save screenshots to folder in Pictures
 defaults write com.apple.screencapture location -string "$HOME/Pictures/Screenshots"
 
+# Show battery percentage in menu bar
+defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
+
+# Remove Spotlight icon
+defaults -currentHost write com.apple.Spotlight MenuItemHidden -bool true
+
 # Disable Siri in menu bar
 #defaults write com.apple.Siri StatusMenuVisible -bool 0
 
