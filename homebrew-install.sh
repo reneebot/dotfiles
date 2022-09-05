@@ -4,7 +4,6 @@ echo "Installing Homebrew..."
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 echo "Installing apps..."
-
 # Essential apps
 brew install --cask google-chrome
 brew install --cask spotify
@@ -30,9 +29,8 @@ brew install --cask visual-studio-code
 # Other
 brew install --cask mactex
 brew install --cask musescore
-brew install --cask runelite
-brew install glfw3
-brew install glew
+brew install glfw3 # needed for Runelite
+brew install glew # needed for Runelite
 
 
 
