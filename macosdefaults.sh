@@ -134,6 +134,16 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 # Prevent Photos from opening automatically when devices are plugged in
 defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
+# don't show an open panel when opening an application like TextEdit or Preview
+defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
+
+# make the speed when scrolling by dragging faster
+defaults write -g NSAutoscrollResponseMultiplier -float 3
+
+# don't treat period or colon as part of words
+# en_US_POSIX corresponds to the "United States (Computer)" setting that was shown in System Preferences in 10.8 and earlier
+#defaults write -g AppleTextBreakLocale en_US_POSIX
+
 ###############################################################################
 # Messages                                                                    #
 ###############################################################################
