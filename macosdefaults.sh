@@ -76,13 +76,16 @@ defaults write com.apple.dock showhidden -bool true
 # 13: Lock Screen
 # Top left screen corner → Mission Control
 defaults write com.apple.dock wvous-tl-corner -int 2
-defaults write com.apple.dock wvous-tl-modifier -int 0
+#defaults write com.apple.dock wvous-tl-modifier -int 0
 # Top right screen corner → Show application windows
 defaults write com.apple.dock wvous-tr-corner -int 3
-defaults write com.apple.dock wvous-tr-modifier -int 0
+#defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → Desktop
 defaults write com.apple.dock wvous-bl-corner -int 4
-defaults write com.apple.dock wvous-bl-modifier -int 0
+#defaults write com.apple.dock wvous-bl-modifier -int 0
+# Bottom right screen corner → none
+defaults write com.apple.dock wvous-br-corner -int 0
+#defaults write com.apple.dock wvous-br-modifier -int 0
 
 # Wipe all (default) app icons from the Dock
 #defaults write com.apple.dock persistent-apps -array
@@ -95,11 +98,27 @@ killall Dock
 # Change scroll direction
 defaults write -g com.apple.swipescrolldirection -bool false
 
+# Three finger horizontal swipe to go between pages
+defaults write -g com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -int 1
+
+# Three finger horizontal swipe to go between Spaces
+defaults write -g com.apple.AppleMultitouchTrackpad TrackpadFourFingerHorizSwipeGesture -int 2
+
+# Disable 2-finger double tap to zoom
+defaults write -g com.apple.AppleMultitouchTrackpad TrackpadTwoFingerDoubleTapGesture -int 0
+
+# Disable spread to show Desktop
+defaults write -g com.apple.AppleMultitouchTrackpad TrackpadFourFingerPinchGesture -int 0
+defaults write -g com.apple.AppleMultitouchTrackpad TrackpadFiveFingerPinchGesture -int 0
+
+# Disable 3 finger swipe up to show Mission Control
+defaults write -g com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture -int 1
+ 
 # lower spring loading delay
 defaults write -g com.apple.springing.delay -float "0"
 
 # make the speed when scrolling by dragging faster
-defaults write -g NSAutoscrollResponseMultiplier -float 3
+defaults write -g NSAutoscrollResponseMultiplier -float "3"
 
 # Always show expanded save dialogs
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
