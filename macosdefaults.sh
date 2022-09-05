@@ -29,12 +29,6 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
-# Show status bar
-#defaults write com.apple.finder ShowStatusBar -bool true
-
-# Show path bar
-#defaults write com.apple.finder ShowPathbar -bool true
-
 killall Finder
 
 ###############################################################################
@@ -82,18 +76,14 @@ defaults write com.apple.dock showhidden -bool true
 # 12: Notification Center
 # 13: Lock Screen
 # 14: Quick Note
-# Top left screen corner → Mission Control
+# Top left screen corner - Mission Control
 defaults write com.apple.dock wvous-tl-corner -int 2
-#defaults write com.apple.dock wvous-tl-modifier -int 0
-# Top right screen corner → Show application windows
+# Top right screen corner - Show application windows
 defaults write com.apple.dock wvous-tr-corner -int 3
-#defaults write com.apple.dock wvous-tr-modifier -int 0
-# Bottom left screen corner → Desktop
+# Bottom left screen corner - Desktop
 defaults write com.apple.dock wvous-bl-corner -int 4
-#defaults write com.apple.dock wvous-bl-modifier -int 0
-# Bottom right screen corner → none
+# Bottom right screen corner - none
 defaults write com.apple.dock wvous-br-corner -int 0
-#defaults write com.apple.dock wvous-br-modifier -int 0
 
 # Wipe all (default) app icons from the Dock
 #defaults write com.apple.dock persistent-apps -array
@@ -130,14 +120,14 @@ defaults write -g NSCloseAlwaysConfirmsChanges -bool true
 # Save screenshots to folder in Pictures
 defaults write com.apple.screencapture location -string "$HOME/Pictures/Screenshots"
 
-# Disable siri in menu bar
+# Disable Siri in menu bar
 #defaults write com.apple.Siri StatusMenuVisible -bool 0
 
-# Don't show an open panel when opening an application like TextEdit or Preview
+# Don't show an open document dialog when launching an application like TextEdit or Preview
 defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
 
 # TextEdit - create plain text documents by default
-defaults write com.apple.TextEdit RichText -bool false && killall TextEdit
+defaults write com.apple.TextEdit RichText -bool false
 
 # Do not offer new disks for Time Machine Backups
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true 
@@ -173,23 +163,10 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 # Prevent Photos from opening automatically when devices are plugged in
 #defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
-
-###############################################################################
-# Messages                                                                    #
-###############################################################################
-# Disable automatic emoji substitution (i.e. use plain text smileys)
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
-
-# Disable smart quotes as it’s annoying for messages that contain code
-#defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
-
-# Disable continuous spell checking
-#defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
-
 ###############################################################################
 # Chrome                                                                      #
 ###############################################################################
-# Disable the all too sensitive backswipe on trackpads
+# Disable two-finger backswipe on trackpads
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 
 
