@@ -126,6 +126,9 @@ defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool 
 # Remove Spotlight icon
 defaults -currentHost write com.apple.Spotlight MenuItemHidden -bool true
 
+# Remove date from menubar clock to allow for itsycal
+defaults write com.apple.menuextra.clock DateFormat -string "j:mm a"
+
 # Disable Siri in menu bar
 #defaults write com.apple.Siri StatusMenuVisible -bool 0
 
@@ -156,6 +159,12 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 # Disable smart quotes as they’re annoying when typing code
 #defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
 
+# Custom Option + arrow shortcuts to switch between spaces
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 "{enabled = 1; value = { parameters = (65535, 123, 11010048); type = 'standard'; }; }"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 80 "{enabled = 1; value = { parameters = (65535, 123, 11141120); type = 'standard'; }; }"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 "{enabled = 1; value = { parameters = (65535, 124, 11010048); type = 'standard'; }; }"
+defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 "{enabled = 1; value = { parameters = (65535, 124, 11141120); type = 'standard'; }; }"
+
 # Don't treat period or colon as part of words
 # en_US_POSIX corresponds to the "United States (Computer)" setting that was shown in System Preferences in 10.8 and earlier
 #defaults write -g AppleTextBreakLocale en_US_POSIX
@@ -175,4 +184,9 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 # Disable two-finger backswipe on trackpads
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 
+###############################################################################
+# Messages                                                                    #
+###############################################################################
+# Enable Messages in iCloud
+defaults write com.apple.madrid CloudKitSyncingEnabled -bool true
 
