@@ -25,6 +25,10 @@ defaults write com.apple.finder CreateDesktop -bool false
 # Enable Text Selection in Quick Look Windows
 defaults write com.apple.finder QLEnableTextSelection -bool true
 
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
 # show status bar
 #defaults write com.apple.finder ShowStatusBar -bool true
 # show path bar
@@ -94,11 +98,17 @@ defaults write -g com.apple.swipescrolldirection -bool false
 # lower spring loading delay
 defaults write -g com.apple.springing.delay -float "0"
 
+# make the speed when scrolling by dragging faster
+defaults write -g NSAutoscrollResponseMultiplier -float 3
+
 # Always show expanded save dialogs
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 
 # Save screenshots to folder in Pictures
 defaults write com.apple.screencapture location -string "$HOME/Pictures/Screenshots"
+
+# don't show an open panel when opening an application like TextEdit or Preview
+defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
 
 # TextEdit - create plain text documents by default
 defaults write com.apple.TextEdit RichText -bool false && killall TextEdit
@@ -124,25 +134,19 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 # Disable smart quotes as they’re annoying when typing code
 #defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
 
-# Turn off notification when a new song starts in Music app
-#defaults write com.apple.Music userWantsPlaybackNotifications -bool false
-
-# Avoid creating .DS_Store files on network or USB volumes
-defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
-defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
-
-# Prevent Photos from opening automatically when devices are plugged in
-defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
-
-# don't show an open panel when opening an application like TextEdit or Preview
-defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
-
-# make the speed when scrolling by dragging faster
-defaults write -g NSAutoscrollResponseMultiplier -float 3
-
 # don't treat period or colon as part of words
 # en_US_POSIX corresponds to the "United States (Computer)" setting that was shown in System Preferences in 10.8 and earlier
 #defaults write -g AppleTextBreakLocale en_US_POSIX
+
+###############################################################################
+# Media                                                                       #
+###############################################################################
+# Turn off notification when a new song starts in Music app
+#defaults write com.apple.Music userWantsPlaybackNotifications -bool false
+
+# Prevent Photos from opening automatically when devices are plugged in
+#defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
 
 ###############################################################################
 # Messages                                                                    #
