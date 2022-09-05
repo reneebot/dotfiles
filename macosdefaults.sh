@@ -97,13 +97,13 @@ killall Dock
 defaults write -g com.apple.swipescrolldirection -bool false
 
 # Three finger horizontal swipe to go between pages
-defaults write -g com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -int 1
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -int 1
 
 # Four finger horizontal swipe to go between Spaces
-defaults write -g com.apple.AppleMultitouchTrackpad TrackpadFourFingerHorizSwipeGesture -int 2
+defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerHorizSwipeGesture -int 2
 
 # Disable 2-finger double tap to zoom
-defaults write -g com.apple.AppleMultitouchTrackpad TrackpadTwoFingerDoubleTapGesture -int 0
+defaults write com.apple.AppleMultitouchTrackpad TrackpadTwoFingerDoubleTapGesture -int 0
  
 # Remove spring loading delay
 defaults write -g com.apple.springing.delay -float "0"
