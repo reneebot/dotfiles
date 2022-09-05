@@ -160,10 +160,14 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 #defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Custom Option + arrow shortcuts to switch between spaces
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 "{enabled = 1; value = { parameters = (65535, 123, 11010048); type = 'standard'; }; }"
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 80 "{enabled = 1; value = { parameters = (65535, 123, 11141120); type = 'standard'; }; }"
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 "{enabled = 1; value = { parameters = (65535, 124, 11010048); type = 'standard'; }; }"
-defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 "{enabled = 1; value = { parameters = (65535, 124, 11141120); type = 'standard'; }; }"
+plutil -replace AppleSymbolicHotKeys.79.value.parameters -json '[ 65535, 123, 11010048 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plutil -replace AppleSymbolicHotKeys.80.value.parameters -json '[ 65535, 123, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plutil -replace AppleSymbolicHotKeys.81.value.parameters -json '[ 65535, 124, 11010048 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+plutil -replace AppleSymbolicHotKeys.82.value.parameters -json '[ 65535, 124, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 "{enabled = 1; value = { parameters = (65535, 123, 11010048); type = 'standard'; }; }"
+#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 80 "{enabled = 1; value = { parameters = (65535, 123, 11141120); type = 'standard'; }; }"
+#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 "{enabled = 1; value = { parameters = (65535, 124, 11010048); type = 'standard'; }; }"
+#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 "{enabled = 1; value = { parameters = (65535, 124, 11141120); type = 'standard'; }; }"
 
 # Don't treat period or colon as part of words
 # en_US_POSIX corresponds to the "United States (Computer)" setting that was shown in System Preferences in 10.8 and earlier
@@ -183,10 +187,4 @@ defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 "{ena
 ###############################################################################
 # Disable two-finger backswipe on trackpads
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
-
-###############################################################################
-# Messages                                                                    #
-###############################################################################
-# Enable Messages in iCloud
-defaults write com.apple.madrid CloudKitSyncingEnabled -bool true
 
