@@ -92,7 +92,7 @@ killall Dock
 defaults write -g com.apple.swipescrolldirection -bool false
 
 # lower spring loading delay
-defaults write -g com.apple.springing.delay -float "0.1"
+defaults write -g com.apple.springing.delay -float "0"
 
 # Always show expanded save dialogs
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
@@ -112,17 +112,17 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write -g NSAutomaticCapitalizationEnabled -bool false
 
-# Disable smart dashes as they’re annoying when typing code
-#defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
-
 # Disable automatic period substitution as it’s annoying when typing code
 defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false
 
-# Disable smart quotes as they’re annoying when typing code
-#defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
-
 # Disable auto-correct
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
+
+# Disable smart dashes as they’re annoying when typing code
+#defaults write -g NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable smart quotes as they’re annoying when typing code
+#defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Turn off notification when a new song starts in Music app
 #defaults write com.apple.Music userWantsPlaybackNotifications -bool false
