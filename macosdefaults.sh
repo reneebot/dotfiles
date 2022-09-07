@@ -20,7 +20,7 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://$HOME/Downlo
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 
 # Hide icons on the desktop
-defaults write com.apple.finder CreateDesktop -bool false
+#defaults write com.apple.finder CreateDesktop -bool false
 
 # Enable text selection in quick look windows
 defaults write com.apple.finder QLEnableTextSelection -bool true
@@ -134,7 +134,11 @@ defaults write -g NSCloseAlwaysConfirmsChanges -bool true
 defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
 
 # Save screenshots to folder in Pictures
-defaults write com.apple.screencapture location -string "~/Pictures/Screenshots" && killall SystemUIServer
+#mkdir ~/Pictures/Screenshots
+#defaults write com.apple.screencapture location -string "~/Pictures/Screenshots"
+
+# Disable screenshot preview thumbnail
+defaults write com.apple.screencapture show-thumbnail -bool false
 
 # Show battery percentage in menu bar
 defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
