@@ -174,7 +174,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write -g InitialKeyRepeat -int 15
 
 # Increase key repeat rate
-defaults write -g KeyRepeat -int 2
+defaults write -g KeyRepeat -int 1
 
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write -g NSAutomaticCapitalizationEnabled -bool false
@@ -192,15 +192,18 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 #defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Change modifier key to Option for switching between spaces
-/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:79:value:parameters:2 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:80:value:parameters:2 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:81:value:parameters:2 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:82:value:parameters:2 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+#/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:79:value:parameters:2 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+#/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:80:value:parameters:2 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+#/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:81:value:parameters:2 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+#/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:82:value:parameters:2 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 #plutil -replace AppleSymbolicHotKeys.79.value.parameters -json '[ 65535, 123, 11010048 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 #plutil -replace AppleSymbolicHotKeys.80.value.parameters -json '[ 65535, 123, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 #plutil -replace AppleSymbolicHotKeys.81.value.parameters -json '[ 65535, 124, 11010048 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 #plutil -replace AppleSymbolicHotKeys.82.value.parameters -json '[ 65535, 124, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-
+#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 "{enabled = 1; value = { parameters = (65535, 53, 11010048); type = 'standard'; }; }"
+#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 80 "{enabled = 1; value = { parameters = (65535, 53, 11141120); type = 'standard'; }; }"
+#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 "{enabled = 1; value = { parameters = (65535, 53, 11010048); type = 'standard'; }; }"
+#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 "{enabled = 1; value = { parameters = (65535, 53, 11141120); type = 'standard'; }; }"
 ###############################################################################
 # Media                                                                       #
 ###############################################################################
