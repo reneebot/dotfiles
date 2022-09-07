@@ -29,14 +29,17 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
+# Lower proxy icon rollover delay
+defaults write -g NSToolbarTitleViewRolloverDelay -float 0
+
+# Show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
 # Start path from home folder in path bar
 defaults write com.apple.finder PathBarRootAtHome -bool true
 
 # Sort folders first
 #defaults write com.apple.finder _FXSortFoldersFirst -bool true
-
-# Add a quit option to Finder
-#defaults write com.apple.finder QuitMenuItem -bool true
 
 killall Finder
 
@@ -45,7 +48,7 @@ killall Finder
 ###############################################################################
 defaults write com.apple.dock orientation -string "left"
 defaults write com.apple.dock autohide -bool true
-defaults write com.apple.dock autohide-delay -float "0"
+defaults write com.apple.dock autohide-delay -float 0
 
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
@@ -115,10 +118,10 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerHorizSwipeGes
 defaults write com.apple.AppleMultitouchTrackpad TrackpadTwoFingerDoubleTapGesture -int 0
  
 # Remove spring loading delay
-defaults write -g com.apple.springing.delay -float "0"
+defaults write -g com.apple.springing.delay -float 0
 
 # Make the speed when scrolling by dragging faster
-defaults write -g NSAutoscrollResponseMultiplier -float "3"
+defaults write -g NSAutoscrollResponseMultiplier -float 3
 
 # Always show expanded save dialogs
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
@@ -126,6 +129,9 @@ defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 
 # Always ask to keep changes when closing documents
 defaults write -g NSCloseAlwaysConfirmsChanges -bool true
+
+# Don't show an open document dialog when launching an application like TextEdit or Preview
+defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
 
 # Save screenshots to folder in Pictures
 defaults write com.apple.screencapture location -string "~/Pictures/Screenshots" && killall SystemUIServer
@@ -141,9 +147,6 @@ defaults write com.apple.menuextra.clock DateFormat -string "j:mm a"
 
 # Disable Siri in menu bar
 #defaults write com.apple.Siri StatusMenuVisible -bool 0
-
-# Don't show an open document dialog when launching an application like TextEdit or Preview
-defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
 
 # Change notification banner time to 2 seconds
 defaults write com.apple.notificationcenterui bannerTime -int 2
@@ -192,7 +195,7 @@ plutil -replace AppleSymbolicHotKeys.82.value.parameters -json '[ 65535, 124, 11
 #defaults write com.apple.Music userWantsPlaybackNotifications -bool false
 
 # Prevent Photos from opening automatically when devices are plugged in
-#defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 
 ###############################################################################
 # Chrome                                                                      #
