@@ -145,6 +145,9 @@ defaults write com.apple.menuextra.clock DateFormat -string "j:mm a"
 # Don't show an open document dialog when launching an application like TextEdit or Preview
 defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
 
+# Change notification banner time to 2 seconds
+defaults write com.apple.notificationcenterui bannerTime -int 2
+
 # Prevent help windows from floating
 defaults write com.apple.helpviewer DevMode -bool true
 
