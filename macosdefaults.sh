@@ -192,6 +192,10 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 #defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
 
 # Change modifier key to Option for switching between spaces
+/usr/libexec/PlistBuddy -c "Delete :AppleSymbolicHotKeys:79" -c "Add :AppleSymbolicHotKeys:79 dict" -c "Add :AppleSymbolicHotKeys:79:enabled bool true" -c "Add :AppleSymbolicHotKeys:79:value dict" -c "Add :AppleSymbolicHotKeys:79:value:type string 'standard'" -c "Add :AppleSymbolicHotKeys:79:value:parameters array" -c "Add :AppleSymbolicHotKeys:79:value:parameters:0 integer 65535" -c "Add :AppleSymbolicHotKeys:79:value:parameters:1 integer 123" -c "Add :AppleSymbolicHotKeys:79:value:parameters:2 integer 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Delete :AppleSymbolicHotKeys:80" -c "Add :AppleSymbolicHotKeys:80 dict" -c "Add :AppleSymbolicHotKeys:80:enabled bool true" -c "Add :AppleSymbolicHotKeys:80:value dict" -c "Add :AppleSymbolicHotKeys:80:value:type string 'standard'" -c "Add :AppleSymbolicHotKeys:80:value:parameters array" -c "Add :AppleSymbolicHotKeys:80:value:parameters:0 integer 65535" -c "Add :AppleSymbolicHotKeys:80:value:parameters:1 integer 123" -c "Add :AppleSymbolicHotKeys:80:value:parameters:2 integer 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Delete :AppleSymbolicHotKeys:81" -c "Add :AppleSymbolicHotKeys:81 dict" -c "Add :AppleSymbolicHotKeys:81:enabled bool true" -c "Add :AppleSymbolicHotKeys:81:value dict" -c "Add :AppleSymbolicHotKeys:81:value:type string 'standard'" -c "Add :AppleSymbolicHotKeys:81:value:parameters array" -c "Add :AppleSymbolicHotKeys:81:value:parameters:0 integer 65535" -c "Add :AppleSymbolicHotKeys:81:value:parameters:1 integer 123" -c "Add :AppleSymbolicHotKeys:81:value:parameters:2 integer 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Delete :AppleSymbolicHotKeys:82" -c "Add :AppleSymbolicHotKeys:82 dict" -c "Add :AppleSymbolicHotKeys:82:enabled bool true" -c "Add :AppleSymbolicHotKeys:82:value dict" -c "Add :AppleSymbolicHotKeys:82:value:type string 'standard'" -c "Add :AppleSymbolicHotKeys:82:value:parameters array" -c "Add :AppleSymbolicHotKeys:82:value:parameters:0 integer 65535" -c "Add :AppleSymbolicHotKeys:82:value:parameters:1 integer 123" -c "Add :AppleSymbolicHotKeys:82:value:parameters:2 integer 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 #/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:79:value:parameters:2 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 #/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:80:value:parameters:2 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 #/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:81:value:parameters:2 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
@@ -200,10 +204,7 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 #plutil -replace AppleSymbolicHotKeys.80.value.parameters -json '[ 65535, 123, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 #plutil -replace AppleSymbolicHotKeys.81.value.parameters -json '[ 65535, 124, 11010048 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 #plutil -replace AppleSymbolicHotKeys.82.value.parameters -json '[ 65535, 124, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 "{enabled = 1; value = { parameters = (65535, 53, 11010048); type = 'standard'; }; }"
-#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 80 "{enabled = 1; value = { parameters = (65535, 53, 11141120); type = 'standard'; }; }"
-#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 "{enabled = 1; value = { parameters = (65535, 53, 11010048); type = 'standard'; }; }"
-#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 "{enabled = 1; value = { parameters = (65535, 53, 11141120); type = 'standard'; }; }"
+
 ###############################################################################
 # Media                                                                       #
 ###############################################################################
