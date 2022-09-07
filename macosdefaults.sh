@@ -142,6 +142,9 @@ defaults write com.apple.menuextra.clock DateFormat -string "j:mm a"
 # Don't show an open document dialog when launching an application like TextEdit or Preview
 defaults write -g NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
 
+# Prevent help windows from floating
+defaults write com.apple.helpviewer DevMode -bool true
+
 # TextEdit - create plain text documents by default
 defaults write com.apple.TextEdit RichText -bool false
 
