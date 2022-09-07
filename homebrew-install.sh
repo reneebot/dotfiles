@@ -12,7 +12,6 @@ brew install --cask dropbox
 
 # Utilities
 brew install --cask appcleaner
-brew install --cask audacity
 brew install --cask itsycal
 brew install --cask the-unarchiver
 
@@ -22,13 +21,14 @@ brew install --cask ferdi
 brew install --cask zoom
 
 # Development
-brew install git
-brew install --cask github
-brew install --cask visual-studio-code
+#brew install git
+#brew install --cask github
+#brew install --cask visual-studio-code
 
 # Other
-brew install --cask mactex
-brew install --cask musescore
+#brew install --cask audacity
+#brew install --cask mactex
+#brew install --cask musescore
 brew install --cask runelite
 brew install glfw3 # needed for Runelite
 brew install glew # needed for Runelite
