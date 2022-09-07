@@ -146,12 +146,12 @@ defaults -currentHost write com.apple.Spotlight MenuItemHidden -bool true
 defaults write com.apple.menuextra.clock DateFormat -string "j:mm a"
 
 # Disable Siri in menu bar
-#defaults write com.apple.Siri StatusMenuVisible -bool 0
+#defaults write com.apple.Siri StatusMenuVisible -bool false
 
 # Change notification banner time to 2 seconds
 defaults write com.apple.notificationcenterui bannerTime -int 2
 
-# Prevent help windows from floating
+# Set Help Viewer windows to non-floating mode
 defaults write com.apple.helpviewer DevMode -bool true
 
 # TextEdit - create plain text documents by default
@@ -178,15 +178,15 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 # Disable smart quotes as they’re annoying when typing code
 #defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
 
-# Custom Option + arrow shortcuts to switch between spaces
-plutil -replace AppleSymbolicHotKeys.79.value.parameters -json '[ 65535, 123, 11010048 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-plutil -replace AppleSymbolicHotKeys.80.value.parameters -json '[ 65535, 123, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-plutil -replace AppleSymbolicHotKeys.81.value.parameters -json '[ 65535, 124, 11010048 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-plutil -replace AppleSymbolicHotKeys.82.value.parameters -json '[ 65535, 124, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-
-# Don't treat period or colon as part of words
-# en_US_POSIX corresponds to the "United States (Computer)" setting that was shown in System Preferences in 10.8 and earlier
-#defaults write -g AppleTextBreakLocale en_US_POSIX
+# Change modifier key to Option for switching between spaces
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:79:value:parameters:2 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:80:value:parameters:2 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:81:value:parameters:2 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:82:value:parameters:2 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+#plutil -replace AppleSymbolicHotKeys.79.value.parameters -json '[ 65535, 123, 11010048 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+#plutil -replace AppleSymbolicHotKeys.80.value.parameters -json '[ 65535, 123, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+#plutil -replace AppleSymbolicHotKeys.81.value.parameters -json '[ 65535, 124, 11010048 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+#plutil -replace AppleSymbolicHotKeys.82.value.parameters -json '[ 65535, 124, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
 ###############################################################################
 # Media                                                                       #
