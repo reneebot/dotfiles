@@ -124,7 +124,7 @@ defaults write com.apple.AppleMultitouchTrackpad TrackpadTwoFingerDoubleTapGestu
 defaults write -g com.apple.springing.delay -float 0
 
 # Make the speed when scrolling by dragging faster
-defaults write -g NSAutoscrollResponseMultiplier -float 3
+#defaults write -g NSAutoscrollResponseMultiplier -float 3
 
 # Always show expanded save dialogs
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
@@ -156,7 +156,7 @@ defaults write com.apple.menuextra.clock DateFormat -string "j:mm a"
 #defaults write com.apple.Siri StatusMenuVisible -bool false
 
 # Change notification banner time to 2 seconds
-defaults write com.apple.notificationcenterui bannerTime -int 2
+defaults write com.apple.notificationcenterui bannerTime -int 3
 
 # Set Help Viewer windows to non-floating mode
 defaults write com.apple.helpviewer DevMode -bool true
@@ -169,6 +169,9 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable press-and-hold and enable key repeat
 defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Lower key repeat delay
+defaults write -g InitialKeyRepeat -int 10
 
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write -g NSAutomaticCapitalizationEnabled -bool false
