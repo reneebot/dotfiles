@@ -29,6 +29,12 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
+# Sort folders first
+#defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+# Add a quit option to Finder
+#defaults write com.apple.finder QuitMenuItem -bool true
+
 killall Finder
 
 ###############################################################################
@@ -118,7 +124,7 @@ defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 defaults write -g NSCloseAlwaysConfirmsChanges -bool true
 
 # Save screenshots to folder in Pictures
-defaults write com.apple.screencapture location -string "$HOME/Pictures/Screenshots"
+defaults write com.apple.screencapture location -string "~/Pictures/Screenshots" && killall SystemUIServer
 
 # Show battery percentage in menu bar
 defaults -currentHost write com.apple.controlcenter BatteryShowPercentage -bool true
@@ -164,10 +170,6 @@ plutil -replace AppleSymbolicHotKeys.79.value.parameters -json '[ 65535, 123, 11
 plutil -replace AppleSymbolicHotKeys.80.value.parameters -json '[ 65535, 123, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 plutil -replace AppleSymbolicHotKeys.81.value.parameters -json '[ 65535, 124, 11010048 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
 plutil -replace AppleSymbolicHotKeys.82.value.parameters -json '[ 65535, 124, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 79 "{enabled = 1; value = { parameters = (65535, 123, 11010048); type = 'standard'; }; }"
-#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 80 "{enabled = 1; value = { parameters = (65535, 123, 11141120); type = 'standard'; }; }"
-#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 81 "{enabled = 1; value = { parameters = (65535, 124, 11010048); type = 'standard'; }; }"
-#defaults write com.apple.symbolichotkeys AppleSymbolicHotKeys -dict-add 82 "{enabled = 1; value = { parameters = (65535, 124, 11141120); type = 'standard'; }; }"
 
 # Don't treat period or colon as part of words
 # en_US_POSIX corresponds to the "United States (Computer)" setting that was shown in System Preferences in 10.8 and earlier
