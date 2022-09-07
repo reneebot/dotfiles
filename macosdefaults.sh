@@ -25,9 +25,6 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 # Hide icons on the desktop
 #defaults write com.apple.finder CreateDesktop -bool false
 
-# Enable text selection in quick look windows
-#defaults write com.apple.finder QLEnableTextSelection -bool true
-
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
@@ -52,6 +49,7 @@ killall Finder
 defaults write com.apple.dock orientation -string "left"
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0.5
 
 # Wipe all (default) app icons from the Dock
 defaults write com.apple.dock persistent-apps -array
@@ -194,16 +192,8 @@ defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 # Change modifier key to Option for switching between spaces
 /usr/libexec/PlistBuddy -c "Delete :AppleSymbolicHotKeys:79" -c "Add :AppleSymbolicHotKeys:79 dict" -c "Add :AppleSymbolicHotKeys:79:enabled bool true" -c "Add :AppleSymbolicHotKeys:79:value dict" -c "Add :AppleSymbolicHotKeys:79:value:type string 'standard'" -c "Add :AppleSymbolicHotKeys:79:value:parameters array" -c "Add :AppleSymbolicHotKeys:79:value:parameters:0 integer 65535" -c "Add :AppleSymbolicHotKeys:79:value:parameters:1 integer 123" -c "Add :AppleSymbolicHotKeys:79:value:parameters:2 integer 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 /usr/libexec/PlistBuddy -c "Delete :AppleSymbolicHotKeys:80" -c "Add :AppleSymbolicHotKeys:80 dict" -c "Add :AppleSymbolicHotKeys:80:enabled bool true" -c "Add :AppleSymbolicHotKeys:80:value dict" -c "Add :AppleSymbolicHotKeys:80:value:type string 'standard'" -c "Add :AppleSymbolicHotKeys:80:value:parameters array" -c "Add :AppleSymbolicHotKeys:80:value:parameters:0 integer 65535" -c "Add :AppleSymbolicHotKeys:80:value:parameters:1 integer 123" -c "Add :AppleSymbolicHotKeys:80:value:parameters:2 integer 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "Delete :AppleSymbolicHotKeys:81" -c "Add :AppleSymbolicHotKeys:81 dict" -c "Add :AppleSymbolicHotKeys:81:enabled bool true" -c "Add :AppleSymbolicHotKeys:81:value dict" -c "Add :AppleSymbolicHotKeys:81:value:type string 'standard'" -c "Add :AppleSymbolicHotKeys:81:value:parameters array" -c "Add :AppleSymbolicHotKeys:81:value:parameters:0 integer 65535" -c "Add :AppleSymbolicHotKeys:81:value:parameters:1 integer 123" -c "Add :AppleSymbolicHotKeys:81:value:parameters:2 integer 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-/usr/libexec/PlistBuddy -c "Delete :AppleSymbolicHotKeys:82" -c "Add :AppleSymbolicHotKeys:82 dict" -c "Add :AppleSymbolicHotKeys:82:enabled bool true" -c "Add :AppleSymbolicHotKeys:82:value dict" -c "Add :AppleSymbolicHotKeys:82:value:type string 'standard'" -c "Add :AppleSymbolicHotKeys:82:value:parameters array" -c "Add :AppleSymbolicHotKeys:82:value:parameters:0 integer 65535" -c "Add :AppleSymbolicHotKeys:82:value:parameters:1 integer 123" -c "Add :AppleSymbolicHotKeys:82:value:parameters:2 integer 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:79:value:parameters:2 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:80:value:parameters:2 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:81:value:parameters:2 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:82:value:parameters:2 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#plutil -replace AppleSymbolicHotKeys.79.value.parameters -json '[ 65535, 123, 11010048 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#plutil -replace AppleSymbolicHotKeys.80.value.parameters -json '[ 65535, 123, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#plutil -replace AppleSymbolicHotKeys.81.value.parameters -json '[ 65535, 124, 11010048 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
-#plutil -replace AppleSymbolicHotKeys.82.value.parameters -json '[ 65535, 124, 11141120 ]' ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Delete :AppleSymbolicHotKeys:81" -c "Add :AppleSymbolicHotKeys:81 dict" -c "Add :AppleSymbolicHotKeys:81:enabled bool true" -c "Add :AppleSymbolicHotKeys:81:value dict" -c "Add :AppleSymbolicHotKeys:81:value:type string 'standard'" -c "Add :AppleSymbolicHotKeys:81:value:parameters array" -c "Add :AppleSymbolicHotKeys:81:value:parameters:0 integer 65535" -c "Add :AppleSymbolicHotKeys:81:value:parameters:1 integer 124" -c "Add :AppleSymbolicHotKeys:81:value:parameters:2 integer 11010048" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+/usr/libexec/PlistBuddy -c "Delete :AppleSymbolicHotKeys:82" -c "Add :AppleSymbolicHotKeys:82 dict" -c "Add :AppleSymbolicHotKeys:82:enabled bool true" -c "Add :AppleSymbolicHotKeys:82:value dict" -c "Add :AppleSymbolicHotKeys:82:value:type string 'standard'" -c "Add :AppleSymbolicHotKeys:82:value:parameters array" -c "Add :AppleSymbolicHotKeys:82:value:parameters:0 integer 65535" -c "Add :AppleSymbolicHotKeys:82:value:parameters:1 integer 124" -c "Add :AppleSymbolicHotKeys:82:value:parameters:2 integer 11141120" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
 ###############################################################################
 # Media                                                                       #
