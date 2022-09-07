@@ -26,7 +26,7 @@ defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 #defaults write com.apple.finder CreateDesktop -bool false
 
 # Enable text selection in quick look windows
-defaults write com.apple.finder QLEnableTextSelection -bool true
+#defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # Avoid creating .DS_Store files on network or USB volumes
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -52,6 +52,9 @@ killall Finder
 defaults write com.apple.dock orientation -string "left"
 defaults write com.apple.dock autohide -bool true
 defaults write com.apple.dock autohide-delay -float 0
+
+# Wipe all (default) app icons from the Dock
+defaults write com.apple.dock persistent-apps -array
 
 # Don’t show recent applications in Dock
 defaults write com.apple.dock show-recents -bool false
@@ -100,9 +103,6 @@ defaults write com.apple.dock wvous-bl-corner -int 4
 # Bottom right screen corner - none
 defaults write com.apple.dock wvous-br-corner -int 0
 
-# Wipe all (default) app icons from the Dock
-#defaults write com.apple.dock persistent-apps -array
-
 killall Dock
 
 ###############################################################################
@@ -111,11 +111,11 @@ killall Dock
 # Change scroll direction
 defaults write -g com.apple.swipescrolldirection -bool false
 
-# Three finger horizontal swipe to go between pages
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -int 1
-
 # Four finger horizontal swipe to go between Spaces
 defaults write com.apple.AppleMultitouchTrackpad TrackpadFourFingerHorizSwipeGesture -int 2
+
+# Three finger horizontal swipe to go between pages
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -int 1
 
 # Disable 2-finger double tap to zoom
 defaults write com.apple.AppleMultitouchTrackpad TrackpadTwoFingerDoubleTapGesture -int 0
