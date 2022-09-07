@@ -119,6 +119,7 @@ defaults write -g NSAutoscrollResponseMultiplier -float "3"
 
 # Always show expanded save dialogs
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
+defaults write -g NSNavPanelExpandedStateForSaveMode2 -bool true
 
 # Always ask to keep changes when closing documents
 defaults write -g NSCloseAlwaysConfirmsChanges -bool true
