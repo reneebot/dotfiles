@@ -29,6 +29,9 @@ defaults write com.apple.finder QLEnableTextSelection -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
+# Start path from home folder in path bar
+defaults write com.apple.finder PathBarRootAtHome -bool true
+
 # Sort folders first
 #defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
