@@ -156,7 +156,7 @@ defaults write com.apple.menuextra.clock DateFormat -string "j:mm a"
 #defaults write com.apple.Siri StatusMenuVisible -bool false
 
 # Change notification banner time to 2 seconds
-defaults write com.apple.notificationcenterui bannerTime -int 3
+defaults write com.apple.notificationcenterui bannerTime -int 2
 
 # Set Help Viewer windows to non-floating mode
 defaults write com.apple.helpviewer DevMode -bool true
@@ -171,7 +171,10 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 defaults write -g ApplePressAndHoldEnabled -bool false
 
 # Lower key repeat delay
-defaults write -g InitialKeyRepeat -int 10
+defaults write -g InitialKeyRepeat -int 12
+
+# Increase key repeat rate
+defaults write -g KeyRepeat -int 1
 
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write -g NSAutomaticCapitalizationEnabled -bool false
