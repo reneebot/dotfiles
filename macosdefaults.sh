@@ -159,6 +159,9 @@ defaults write com.apple.menuextra.clock DateFormat -string "j:mm a"
 # Set Help Viewer windows to non-floating mode
 defaults write com.apple.helpviewer DevMode -bool true
 
+# Do not save to cloud by default
+defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
+
 # TextEdit - create plain text documents by default
 defaults write com.apple.TextEdit RichText -bool false
 
