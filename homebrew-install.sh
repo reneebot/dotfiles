@@ -10,6 +10,9 @@ brew install --cask spotify
 brew install --cask bettertouchtool
 brew install --cask dropbox
 
+brew install mas
+mas install 1176895641 # Spark
+
 # Utilities
 brew install --cask appcleaner
 brew install --cask itsycal
