@@ -177,6 +177,9 @@ defaults write -g InitialKeyRepeat -int 15
 # Increase key repeat rate
 defaults write -g KeyRepeat -int 1
 
+# Disable shake to find cursor
+defaults write -g CGDisableCursorLocationMagnification -bool true
+
 # Disable automatic capitalization as it’s annoying when typing code
 defaults write -g NSAutomaticCapitalizationEnabled -bool false
 
