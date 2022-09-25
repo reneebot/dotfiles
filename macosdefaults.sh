@@ -175,7 +175,7 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 defaults write -g InitialKeyRepeat -int 15
 
 # Increase key repeat rate
-defaults write -g KeyRepeat -int 1
+defaults write -g KeyRepeat -int 2
 
 # Disable shake to find cursor
 defaults write -g CGDisableCursorLocationMagnification -bool true
@@ -216,3 +216,8 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # Disable two-finger backswipe on trackpads
 defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
 
+###############################################################################
+# Itsycal                                                                     #
+###############################################################################
+defaults write com.mowglii.ItsycalApp ClockFormat -string "MMM d"
+defaults write com.mowglii.ItsycalApp HideIcon -bool true
